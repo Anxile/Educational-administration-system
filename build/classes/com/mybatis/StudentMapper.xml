@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.StudentDao">
+
+<select resultType="student" parameterType="student" id="login">
+	select * from stuinfotable where stuname = #{stuname} 
+	and stupass=#{stupass}
+	</select>
+	
+	<insert id="stuinfadd" parameterType="student">
+	
+	insert into stuinfotable values(null,0,#{stuname},#{stumajor},#{stucollege},#{stusex},#{stubirth},#{stuphone})
+	
+	</insert>
+	
+	<select id="stuinfoselectById" parameterType="Integer" resultType="student">
+	select * from stuinfotable where sid=#{sid}
+	</select>
+	
+	<select id="stujump" parameterType="Integer" resultType="student">
+	
+		select uid from stuinfotable where sid=#{sid}
+	</select>
+	
+</mapper>

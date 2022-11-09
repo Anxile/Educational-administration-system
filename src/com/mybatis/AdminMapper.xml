@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.AdminDao">	
+<!-- 用于绑定Dao层接口，dao接口的方法对应mapper中的sql语句的id名 -->
+
+<select resultType="admin" parameterType="admin" id="login">
+	select * from admintable where adminname = #{adminname} and adminpass=#{adminpass}
+	</select>
+
+
+</mapper>
